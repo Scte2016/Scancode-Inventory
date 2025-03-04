@@ -1,0 +1,22 @@
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Form1.resources
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Resources.resources
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.vbproj.GenerateResource.Cache
+C:\Users\SCTE\documents\visual studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Form2.resources
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\bin\Debug\Scancode Inventory.exe
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\bin\Debug\Scancode Inventory.pdb
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\bin\Debug\Scancode Inventory.xml
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\Scancode Inventory.exe
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\Scancode Inventory.xml
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\Scancode Inventory.pdb
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Form3.resources
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.vbprojResolveAssemblyReference.cache
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\bin\Debug\Scancode Inventory.exe.config
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Form4.resources
+C:\Users\SCTE\documents\visual studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Form5.resources
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\SCTE\documents\visual studio 2010\Projects\WindowsApplication2\WindowsApplication2\bin\Debug\Scancode Inventory.exe.manifest
+C:\Users\SCTE\documents\visual studio 2010\Projects\WindowsApplication2\WindowsApplication2\bin\Debug\Scancode Inventory.application
+C:\Users\SCTE\documents\visual studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\Scancode Inventory.exe.manifest
+C:\Users\SCTE\documents\visual studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\Scancode Inventory.application
+C:\Users\SCTE\Documents\Visual Studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Form6.resources
+C:\Users\SCTE\documents\visual studio 2010\Projects\WindowsApplication2\WindowsApplication2\obj\x86\Debug\WindowsApplication2.Form7.resources
