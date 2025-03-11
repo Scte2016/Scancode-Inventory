@@ -1,0 +1,480 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.15
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema scancode
+--
+
+CREATE DATABASE IF NOT EXISTS scancode;
+USE scancode;
+
+--
+-- Definition of table `hist`
+--
+
+DROP TABLE IF EXISTS `hist`;
+CREATE TABLE `hist` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(45) NOT NULL,
+  `quan` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `dat` date DEFAULT NULL,
+  `company` varchar(45) NOT NULL,
+  `dr` varchar(45) DEFAULT NULL,
+  `si` varchar(45) DEFAULT NULL,
+  `price` double NOT NULL,
+  `size` varchar(45) DEFAULT NULL,
+  `descri` varchar(150) NOT NULL,
+  `unit` varchar(45) NOT NULL,
+  `pnme` varchar(60) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2123 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hist`
+--
+
+/*!40000 ALTER TABLE `hist` DISABLE KEYS */;
+/*!40000 ALTER TABLE `hist` ENABLE KEYS */;
+
+
+--
+-- Definition of table `items`
+--
+
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `descri` varchar(100) DEFAULT NULL,
+  `size` varchar(45) DEFAULT NULL,
+  `quan` int(10) unsigned NOT NULL,
+  `dat` date DEFAULT NULL,
+  `typ` varchar(45) NOT NULL,
+  `unit` varchar(45) NOT NULL,
+  `price` double NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=313 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `items`
+--
+
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (21,'TTR85300','Thermal Transfer ribbon','Wax resin ,Face out ,1 Inch Core,','85mm x 300m',20,'2025-02-04','Ribbon','Roll',460),
+ (22,'TTR102300O','Thermal Transfer Ribbon','Wax Resin ,Face Out ,1 Inch Core','102mm x 300m',0,'2025-02-08','Ribbon','Roll',705),
+ (23,'TTR102300I','Thermal Transfer Ribbon','Wax Resin ,Face In ,1 Inch Core','102mm x 300m',0,'2024-10-09','Ribbon','Roll',542.64),
+ (24,'TTR80300','Thermal Transfer Ribbon','Wax Resin ,Face Out ,1 Inch Core','80mm x 300m',3,'2024-10-14','Ribbon','Roll',560.05),
+ (25,'TTR110300','Thermal Transfer Ribbon','Wax Resin ,Face Out ,1 Inch Core','110mmx300m',14,'2025-01-21','Ribbon','Roll',674.1),
+ (26,'TTR60300','Thermal Transfer Ribbon','Wax Resin ,Face Out ,1 Inch Core','60mmx300m',0,'2022-02-22','Ribbon','Roll',320),
+ (27,'TTR10275','Thermal Transfer Ribbon','Wax Resin ,Face Out ,1/2 Inch Core','102mmx75m',13,'2025-02-06','Ribbon','Roll',150),
+ (29,'PL6070','YUPO PLAIN BIG','Synthetic Yupo,1 across 3 Inch Core,2000 pcs per roll','60mm x 70mm',0,'2025-02-08','Label','Roll',1030.53);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (30,'PL151','Plain Label ','Synthetic Yupo,2 across 1 Inch Core,1300 pcs per roll','1.5 Inch x 1 Inch ',40,'2021-11-10','Label','Roll',100),
+ (32,'PL151SC','Plain Label ','Satin Standard,2 across 1 Inch Core Sc, 1300 pcs per roll','1.5 Inch x 1 Inch ',217,'2023-06-07','Label','Roll',114.6),
+ (33,'PMS125125','Plain with I Mark Satin','3 across 1 Inch core,2000 pcs per roll','1.25 Inch x 1.25 Inc',9,'2022-09-16','Label','Roll',647),
+ (34,'PL110102','Plain Label ','Satin Standard,1 across 3 inch Core,1000 pcs per roll','110mm x 102mm',0,'2024-10-29','Label','Roll',695.5),
+ (35,'PL21','Plain Label ','Synthetic Yupo ,2 across 1 Inch Core,500 pcs per roll','2 Inchx 1 Inch ',135,'2024-10-09','Label','Roll',350.5),
+ (36,'BBG33','Barcode with Border Green','Satin Standard, 1 across 1  Inch Core,1400 pcs per roll','3 Inch x 3 Inch ',0,'2024-08-06','Label','Roll',1191),
+ (37,'PL90145','Plain Label ','1A 3C ,1200 pcs per roll','90mm x 145mm',12,'2021-08-24','Label','Roll',100),
+ (39,'SYA4','A4 Sticker Solid Yellow Patone 102c','Satin Standard,100pcs per bundle','210mm x 297mm',1700,'2024-10-09','Label','Sheet',5);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (41,'SLBA4','A4 Sticker Solid Ligth Blue Patone 2915c','Satin Standard,100pcs per bundle ','210mm x 297mm',1700,'2024-10-09','Label','Sheet',5),
+ (42,'SOA4','A4 Sticker Solid Orange Patone 715c','Satin Standard,100pcs per bundle ','210mm x 297mm',1700,'2024-10-09','Label','Sheet',5),
+ (43,'SRA4','A4 Sticker Solid Red Patone 1788c','Satin Standard,100pcs per bundle','210mm x 297mm',1700,'2024-10-09','Label','Sheet',5),
+ (44,'SYGA4','A4 Sticker Solid Yellow  Green Patone 2297c','Satin Standard,100pcs per bundle','210mm x 297mm',1700,'2024-10-09','Label','Sheet',5),
+ (46,'PL6338','Plain Label ','Satin Standard, 1 Across, 3 Inch Core, 1000 pcs per Roll, Plain','63mm x 38mm ',7,'2022-02-16','Label','Roll',241.5),
+ (47,'PT1','Packaging Tape ','Clear Tape','2 inch X 100m  X 45 mic',0,'2022-05-16','Tape','Roll',34),
+ (48,'SF50030017','Stretch Film ','Clear Stretch Film ','500mm x 300m  x 17mic',3,'2024-10-09','Stretch Film ','Roll',557),
+ (49,'ALD1150D','Auto Label Dispenser 1150D ','Label Sizes Label Length 3150mm Width 4140mm with Counter','201801907',1,'2021-12-07','Machine','Piece',28000);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (50,'ALD1150D','Auto Label Dispenser 1150D ','Label Sizes Label Length 3150mm Width 4140mm with Counter','201801925',1,'2021-12-07','Machine','Piece',28000),
+ (51,' RT5000','Electronic Tape Dispenser','Adhesive Tape Cutting Machine','FB170525',1,'2021-08-25','Machine','Piece',15000),
+ (52,'A2000','Electronic Tape Dispenser','Adhesive Tape Cutting Machine','FB170617',1,'2021-08-25','Machine','Piece',15000),
+ (53,'TL-SG1008',' Tp Link TL-SG1008','8 Port Gigabit DesktopRackmount Switch','2181A26000568',1,'2021-08-25','Machine','Piece',2000),
+ (55,'ALD1150D','Auto Label Dispenser 1150D','Demo unit','Demo 201710439',1,'2021-12-07','Machine','Piece',28000),
+ (56,'K1WI','K1 weight indicator','Demo Unit','Demo',1,'2021-08-25','Machine','Piece',0),
+ (57,' M1000S','Electronic Tape Dispenser','Demo Unit','Demo-XLT079837',1,'2022-01-20','Machine','Piece',0),
+ (58,'Pr120LR','Postek R-120 Label Rewinder ','Demo label rewinder ','Demo R021810050',1,'2021-08-25','Machine','Piece',0),
+ (59,'EPTMU330B','EPSON PRINTER TM-U330B 251','Demo Thermal  Printer','Demo  X45G000100',1,'2021-08-25','Machine','Piece',0);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (61,'PSpool','External Label Dispenser','Universal External Label Dispenser','PS19003',0,'2022-11-10','Machine Parts','Piece',100),
+ (62,'Pspool','External Label Dispenser','Universal External Label Dispenser','PS19002',0,'2022-11-10','Machine Parts','Piece',0),
+ (63,'NLBEML','NORDSON L BRACKET EM LOCK','L Bracket for Magnetic Lock','No Serial',2,'2021-08-25','Machine Parts','Piece',3500),
+ (64,'ELCPS','Electric Lock Controller Power Supply','Power Supply for Magnetic Lock System','No Serial',1,'2021-08-25','Machine Parts','Piece',1000),
+ (65,'Zcut91343','Z cut - 9 ','Auto Tape Dispenser','S202001343',1,'2021-08-25','Machine','Piece',17028),
+ (66,'Zcut91181','Z Cut - 9 ','Auto Tape Dispenser','S202001181',1,'2021-08-25','Machine','Piece',17028),
+ (67,'24DCM','24 Dc Motor  ','Dc motor For Label Dispenser','No Serial',6,'2021-11-09','Machine Parts','Piece',3500),
+ (68,'ISLD','Infrared Sensor for Label Dispenser','Sensor for Label Dispenser ','No Serial',5,'2021-08-25','Machine Parts','Piece',100),
+ (69,'LDR','Label Dispenser Roller','Label Dispenser Roller','No Serial',7,'2021-11-22','Machine Parts','Piece',100);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (70,'BSCR','Barcode Solid Color Red','Satin Standard, 8,500 pcs per roll, 3 inch core, 6 columns','15 mm diameter',0,'2021-08-27','Label','Roll',203.5),
+ (71,'M1000S1','Electronic Tape Dispenser M1000S','Auto Tape Dispenser','20201080001',0,'2022-10-24','Machine','Piece',37000),
+ (72,'M1000S2','Electronic Tape Dispenser M1000S','Auto Tape Dispenser','20201080002',0,'2022-10-24','Machine','Piece',37000),
+ (73,'M1000S3','Electronic Tape Dispenser M1000S','Auto Tape Dispenser','20201080003',0,'2022-10-24','Machine','Piece',37000),
+ (74,'M1000S4','Electronic Tape Dispenser M1000S','Auto Tape Dispenser','20201080004',0,'2022-10-24','Machine','Piece',37000),
+ (75,'M1000S5','Electronic Tape Dispenser M1000S','Auto Tape Dispenser','20201080005',0,'2022-10-24','Machine','Piece',37000),
+ (76,'PLS42','Plain label (Box Sticker)','Synthetic Yupo, 1 Across, 1 Inch Core, 1,400 pcs per Roll, Plain','4 inch x 2 inch',14,'2024-11-14','Label','Roll',2134.5),
+ (77,'BCSCSBLUE','Barcode Solid Color Solid Blue','Satin Standard,Solid Blue, 6 Columns,  3 Inch core','15mm Diameter',0,'2021-09-03','Label','Roll',203.5);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (78,'PL7040','Plain Label','Satin Standard, 1 Across, 3 Inch core, 1000 pcs per roll, Plain','70mm x 40mm',0,'2025-01-21','Label','Roll',212.12),
+ (79,'PL11050','Plain Label','Satin Standard, 1 Across, 3 inch Core, 1000 pcs per roll, Plain','110mm x 50mm',0,'2025-01-21','Label','Roll',334.91),
+ (80,'PTHPC42T','Printer Head PC42T','Honeywell Printer Head','17-02771-R964-CHN',0,'2021-09-10','Machine Parts','Piece',18000),
+ (81,'PTHPC42T','Printer Head PC42T','Honeywell Printer Head','17-02730-R946-CHN',0,'2021-09-10','Machine Parts','Piece',18000),
+ (82,'PTHPC42T1','Printer Head PC42T','Honeywell Printer Head','17-02834-R901-CHN',0,'2022-10-10','Machine Parts','Piece',18000),
+ (83,'ZDW7511','Zebra Direct Wristband','200 pcs per set','.75 inch x 11 inch',5,'2021-09-10','Label','Piece',27900),
+ (84,'G1','Gear I ','Gear','No Serial',10,'2021-09-10','Machine Parts','Piece',1),
+ (85,'RDG','R.D Gear','Gear','No Serial',10,'2021-09-10','Machine Parts','Piece',1),
+ (86,'BPTC','Blade Plate','Tape Cutter Blade','No Serial',3,'2021-09-10','Machine Parts','Piece',350);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (88,'LDR','Label Dispenser Roller','Roller For Label Dispenser','No Serial',7,'2021-11-22','Machine Parts','Piece',1),
+ (89,'MRG','M.R Gear','Gear','No Serial',20,'2021-09-10','Machine Parts','Piece',1),
+ (90,'LRGL','L.R Gear (LOWER)','Gear','No Serail',30,'2021-09-10','Machine Parts','Piece',1),
+ (91,'BTTNSW','Button switch  Unversal','Button Universal','No serial',19,'2021-09-10','Machine Parts','Piece',1),
+ (92,'LDC','Label Dispenser Counter','Counter For Label Dispenser','No Serial',10,'2021-09-10','Machine Parts','Piece',1),
+ (93,'FTS','Flexible Tape Support ','Flexible Tape support ','No Serial',3,'2021-09-10','Machine Parts','Piece',1),
+ (94,'TDCH','Tape Dispenser Counter Holder ','Tape Dispenser Counter Holder ','No Serial',4,'2021-09-10','Machine Parts','Piece',1),
+ (95,'TDC','Tape Dispenser Counter','Tape Dispenser Counter','No Serial',1,'2021-09-10','Machine Parts','Piece',7000),
+ (96,'3pc','3 Pin Connector ','3 pin connector ','No Serial',25,'2021-09-10','Machine Parts','Piece',1);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (97,'TO1','Tape outlet ','Tape outlet ','No Serial',1,'2021-09-10','Machine Parts','Piece',1),
+ (98,'RRSTO','Removable Roller Set w/O Tape Outlet','Removable Roller Set wO Tape Outlet','No Serial',3,'2021-09-10','Machine Parts','Piece',1),
+ (99,'RRWTO','Removable Roller Set with Tape Outlet','Removable Roller Set with Tape Outlet','No Serial',6,'2021-09-10','Machine Parts','Piece',1),
+ (100,'RHPC42T','PC42t RIBBON HOLDER','PC42t RIBBON HOLDER','No Serial',2,'2021-09-10','Machine Parts','Piece',1),
+ (101,'CBTD','Cutter Blade ','Cutter Blade Tape Dispenser Z cut','No Serial',10,'2021-09-10','Machine Parts','Piece',350),
+ (102,'TOLAC1200','Tp Link AC1200','Dual Gigabit, Ceiling Mount, Acces Point, 300 mbps Dual Wifi','217c675000003',1,'2021-09-10','Machine','Piece',4000),
+ (103,'ACML','Access Controller','Access Control for Magnetic Lock','423107021',1,'2021-09-10','Machine','Piece',3000),
+ (104,'PHTX2','Printer Head TX2','Printer Head  for TX2','7G17 8389',0,'2022-11-10','Machine','Piece',1);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (105,'PHTX2','Printer Head TX2(Broken)','Printer Head for TX2','4F12 8900 648',0,'2022-11-10','Machine','Piece',0),
+ (106,'XL-6200A','Sunlux XL-6200A (Demo Unit)','Demo Unit','910280406G',1,'2021-09-10','Machine','Piece',0),
+ (107,'ACR122U','Conctactless Smart Card Reader','Demo Unit','No Serial',1,'2021-09-10','Machine','Piece',0),
+ (108,'1620BT-S0034','Superlead Barcode Scanner(Demo Unit)','Superlead Barcode Scanner Wireless 1D Model 2620BT ','YY1610AS0034',0,'2023-02-02','Machine','Piece',0),
+ (109,'2620BT-F0031','Superlead Barcode Scanner(Demo Unit)','Superlead Barcode Scanner Wireless 1D/2D 2620BT','SS261 A1 F0031',0,'2023-02-02','Machine','Piece',0),
+ (110,'ZC9DK','Zcut9 Dispenser Knife','Dispenser Knife for Z cut 9 Auto Tape Dispenser','No Serial',16,'2021-09-10','Machine','Piece',1000),
+ (111,'7708SL-E0002','Superlead Barcode Scanner (Demo Unit)','Superlead Barcode Scanner Wired 1D/2D Model 7708SL','SM774 A1 E0002',0,'2023-02-02','Machine','Piece',0),
+ (112,'AC2PRO','Anviz C2 Pro','Professional PoE Fingerprint and Card Terminal','1470100019420054',0,'2023-01-17','Machine','Piece',35000);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (113,'AC2PRO096','Anviz C2 Pro','Professional PoE Fingerprint adn Card Terminal','1470100019420096',1,'2023-01-17','Machine','Piece',35000),
+ (114,'XL9310','Sunlux XL 9310(Demo Unit)','Sunlux Barcode Scanncer 1d Wireless 300m Distance','70017093',1,'2021-09-10','Machine','Piece',1),
+ (115,'616-A','Sunlux 616-A(Demo Unit)','Sunlux Barcode Scanner','40108862',1,'2021-09-10','Machine','Piece',1),
+ (117,'EST940Y','Sealer Tape Yellow','Sealer Tape Color Yellow','9 mm x 40 m',0,'2024-10-10','Tape','Roll',35),
+ (118,'PL42Syn','STICKER TSC for SLT ','Synthetic Yupo, 1 Across, 3 Inch core, 2000 Pcs per Roll, Plain','4 inch x 2 inch',452,'2025-02-28','Label','Roll',999.95),
+ (119,'PL7826','Plain label (Plastic Sticker)','Synthetic Yupo, 1 Across, 3 Inch Core, 5200 Pcs per Roll, Plain','78mm x 26mm',250,'2025-02-13','Label','Roll',2390),
+ (120,'ZT411','Zebra ZT411 Barcode Printer','Part No. ZT41143 T0P0000Z , 1 year warranty','99J212300479',0,'2021-10-01','Machine','Piece',107000),
+ (121,'Z1AEOC','Zebra One Care','Zebra One Care Essential ','PN: Z1AE-ZT411-3C0',0,'2021-10-01','Software','Piece',26500);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (122,'PT21000','Packaging Tape','Clear Tape','2 Inch x 1000m x 45 mic',5,'2023-03-17','Tape','Roll',460),
+ (123,'PL4060','Plain Label','Satin Standard,2 Column, 1 Inch Core, 1500 pcs per Roll, Plain','40mm x 60mm',8,'2021-12-06','Label','Roll',520),
+ (124,'ZXPS3','Zebra Series 3 Ribbon','ZXP Series 3 True Colors Ribbon, 250 Image','P1041282-003',2,'2022-12-21','Ribbon','Roll',5737.5),
+ (125,'PL15010SYLW','Plain Label Yellow','Satin Standard, 2 Across, 1 Inch Core, 1300 pcs per Roll, Solid Yellow','1.50 Inch x 1 Inch',0,'2023-06-07','Label','Roll',147),
+ (126,'SF5002518','Stretch Film','2 Inch Core','500mm x 2.5kgs x18m',0,'2021-11-04','Stretch Film','Roll',557),
+ (127,'BP46','Barcode Laber','Satin Standard, 970 pcs per Roll, 1 Across, 3 Inch Core ,Plain','4 inch x 6 inch',0,'2023-05-31','Label','Roll',1240),
+ (130,'BL3410','Blank Label','Satin Standard, 1 Across, 3 inch Core , Plain','34mm x 10mm',10,'2021-11-11','Label','Roll',1),
+ (131,'PL12742','Plain Label','Matte Standard, 1 Across, 3 Inch Core, 1500 per Roll ','127mm x 42mm',7,'2021-11-11','Label','Roll',1);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (132,'PL12034','Plain Label','Matte Standard, 1 Across, 3 Inch Core, 4100 pcs per Roll','120mm x 34mm',2,'2021-11-11','Label','Roll',1),
+ (133,'PL12028','Plain Label','Matte Standard, 1 Across, 3 inch core, 10680 per Roll','120mm x 28mm',2,'2021-11-11','Label','Roll',1),
+ (134,'PTO','Packaging Tape Office','Clear Tape Office Use','2 Inch x100m  x45mic',6,'2022-12-21','Tape','Roll',1),
+ (136,'PL44','Plain Label','Synthetic Yupo, 1 Across, 1 Inch Core, 700 pcs per Roll','4 inch x 4 inch ',0,'2024-12-13','Label','Roll',1444.5),
+ (137,'TTR11075','Thermal Transfer Ribbon','Wax Resin, Face Out, 1/2 Inch Core','110mm x 75m',10,'2024-12-13','Label','Roll',191.74),
+ (138,'BBY33','Barcode with Border Yellow','Satin Standard, 1 across 1  Inch Core,1400 pcs per roll','3 Inch x 3 Inch',3,'2024-04-18','Label','Roll',1191),
+ (139,'ZCUT-9','Zcut Autotape Dispenser(Broken)','220v,Width: 6 - 60mm,  Length: 5 - 999mm','S202001344',2,'2021-11-23','Machine','Piece',1),
+ (140,'ZT220','Zebra ZT220 Industrial Printer(Service Unit)','203 DPI, 4.90 inch  max width,  direct-thermal or thermaltransfer','52J184400325',0,'2024-02-02','Machine','Piece',1);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (142,'PD43','Honeywell PD43 Barcode Printer','Intermec By Honeywell Pd43 203 DPI Barcode Printer','208C1850130',0,'2021-12-15','Printer','Roll',45500),
+ (143,'PSPOOL','External Label Dispenser','Universal External Label Dispenser Spooler','PS19001',0,'2022-11-10','Machine Parts','Piece',1),
+ (144,'POWERADAPTOR','Power Cord Adaptor','3 way, Black','No Serial',3,'2022-01-27','Machine Parts','Piece',850),
+ (145,'PL32','Plain Label','Satin Standard,1000 pcs per Roll, 1 Across, SRC,1 inch Core, Plain,w/perf\r\n','3 Inch x 2 Inch',0,'2024-12-13','Label','Roll',500),
+ (146,'PL7020','Plain Label','Satin Matte ;6,600 pcs per Roll, 1 Across, 3 inch Core, Plain, SC\r\n','70mm x 20mm',0,'2022-04-19','Label','Roll',2882),
+ (147,'PWC','Power Cord 3m','3 pin AC Power Cord ','3 Meters',2,'2022-08-02','Machine Parts','Piece',2200),
+ (148,'CBS','Cutter Blade Set M1000s','Cutter Blade Set  for M1000s(Blade, Sensor, And Housing)','No Serial',0,'2022-02-11','Machine Parts','Piece',3800),
+ (149,'IDCARDPVC','Blank PVC Card','Blank PVC Card, PVC Material, Glossy surface \r\nThick : 0.76mm - .08mm','54 mm x 85mm',800,'2023-09-07','ID Card','Piece',9.5);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (150,'IDCARDPROX','Prox ID Card without serial','Prox ID Thin ISO card without serial, 125khz Blank PVC, 64bit manchester','54mm x 85mm',700,'2024-01-18','ID Card','Piece',55),
+ (151,'IDCARDPROXS','Prox ID Card with serial','Prox ID Thin ISO card with serial, 125khz Blank PVC, 64bit manchester\r\n','54mm x 85mm',141,'2024-01-19','ID Card','Piece',95),
+ (152,'IDCARDMIFARE','Mifare Card ','Mifare Card ','54mm x 85mm',28,'2022-02-23','ID Card','Piece',1),
+ (153,'PL3252','Plain Label','Satin Standard,1500 pcs per Roll, 1 Across,1 inch Core, Plain,w/perf\r\n','3.25 inch x 2 inch',0,'2024-12-04','Label','Roll',310),
+ (154,'TR4070-EL','Thermal Transfer Ribbon','Thermal Transfer Ribbon TR4070-EL, Face Out ,1 Inch Core','110mm x 300m',0,'2022-03-09','Ribbon','Roll',1300),
+ (155,'PSWAV','Wavlink NU78M41','Print Server','None',1,'2022-03-21','Router','Piece',3000),
+ (156,'PL42SAT','STICKER SATIN COMMON LABEL','Satin Standard,1 Across, 3 Inch Core, 2,000 pcs per Roll, Plain','4 inch x 2 inch',3,'2025-02-08','Label','Roll',687.95),
+ (159,'PSLPOOL4','External Label Dispenser','Universal External Label Spooler','PS19004',1,'2022-03-31','Machine Parts','Piece',1);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (160,'PL125125','Plain Label','Satin Standard,3 across 1 Inch Core, No Gapping, SC, 6,560 pcs per roll\r\n','1.25inch x 1.25inch',0,'2023-08-04','Label','Roll',917.84),
+ (161,'PL12075','Plain Label','Satin Standard, 3 across 1 Inch Core SC, No Gapping, 10,680 pcs per roll\r\n','1.20inch x 0.75inch',0,'2023-08-04','Label','Roll',997.92),
+ (162,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KR5',0,'2022-05-31','Machine','Piece',3480),
+ (163,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KRE',0,'2022-05-31','Machine','Piece',3480),
+ (164,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KRT',0,'2022-05-31','Machine','Piece',3480),
+ (165,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KTI',0,'2022-05-31','Machine','Piece',3480),
+ (166,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KTN',0,'2022-05-31','Machine','Piece',3480);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (167,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KV6',0,'2022-05-31','Machine','Piece',3480),
+ (168,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KW6',0,'2022-05-31','Machine','Piece',3480),
+ (169,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5L25',0,'2022-05-31','Machine','Piece',3480),
+ (170,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5L46',0,'2022-05-31','Machine','Piece',3480),
+ (171,'ZBSLS1203','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5L4Y',0,'2022-05-31','Machine','Piece',3480),
+ (172,'ZHC100','HC100(Service Unit)','Zebra Wristband Printer','09J173100189',1,'2021-09-10','Machine','Piece',0),
+ (173,'XP58IIV','Xprinter 58IIV  POS Printer','Service unit Replacement For the Damage Epson POS Printer','58IIHVEBU16210805',0,'2022-06-16','Printer','Piece',1),
+ (174,'TTR130300','Thermal Transfer Ribbon','Wax Resin ,Face Out ,1 Inch Core\r\n','130mm x 300m',0,'2024-07-11','Ribbon','Roll',650);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (176,'PLSYSYN','Pallet Label Synthetic Yupo Solid Yellow','Synthetic Yupo PANTONE YellowC; Continuous,3\"Core, 1Across; w/side gap','3.0 inch x 150M',0,'2022-07-08','Label','Roll',2700),
+ (177,'STU1','1 Set System Unit ','AMD A4-6300,4Gb Ram, 120 SSD,Neutron Case,Nvision N190HD SN : N190HDS202106','00331-10000-00001-AA',0,'2022-11-10','Machine','Set',1),
+ (178,'K3STS','Life Care K-S3','Hands Free Temperature Quick Measurement Tool Thermometer With Stand','N/A',0,'2022-07-15','Machine','Piece',2300),
+ (179,'ZBDS2208-3320','ZEBRA DS2208','Zebra Handheld Digital Scanner; 1D/2D; SR Black; Wired/Corded; With Stand\r\n','22132010553320',0,'2024-06-20','Machine','Piece',9300),
+ (180,'ZBDS2208-3326','ZEBRA DS2208','Zebra Handheld Digital Scanner; 1D/2D; SR Black; Wired/Corded; With Stand\r\n','22132010553326',1,'2022-07-13','Machine','Piece',9300),
+ (181,'ZBDS2208-3315','ZEBRA DS2208','Zebra Handheld Digital Scanner; 1D/2D; SR Black; Wired/Corded; With Stand\r\n','22132010553315',1,'2022-07-13','Machine','Piece',9300),
+ (182,'PTHPC42T-R942','Printer Head PC42T','Honeywell Printer Head','21-00108-R942-CHN',0,'2024-01-04','Machine Parts','Piece',18000);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (183,'PTHPC42T-R995','Printer Head PC42T','Honeywell  PC42T Printer Head','21-00110-R995-CHN',0,'2024-01-04','Machine Parts','Piece',18000),
+ (184,'PTHPC42T-R946','Printer Head PC42T','Honeywell PC42T Printer Head','21-00103-R946-CHN',0,'2024-06-20','Machine Parts','Piece',18000),
+ (185,'PC42T-C23','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi (SERVICE UNIT)',' 19175B4C23',1,'2024-07-25','Printer','Piece',1),
+ (186,'PC42T-216','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi (SERVICE UNIT)\r\n','19166B7216',0,'2022-07-21','Printer','Piece',1),
+ (187,'PC42T-312','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi ','19179B3312',0,'2022-07-21','Printer','Piece',1),
+ (188,'PM42','Honeywell Mid-Range Industrial Printer','Honeywell Mid-Range Industrial Printer PM42 203dpi  (SERVICE UNIT)\r\n','22083B6401',0,'2022-08-04','Printer','Piece',1),
+ (189,'PM42','Honeywell Mid-Range Industrial Printer','Honeywell Mid-Range Industrial Printer PM42 203dpi  (SERVICE UNIT)\r\n','22096B05CC',0,'2022-08-04','Printer','Piece',1);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (190,'ZBSLS1203-YP5JG4','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JG4',0,'2022-08-02','Machine','Unit',3480),
+ (191,'ZBSLS1203-YP5JG8','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JG8',0,'2022-08-02','Machine','Unit',3480),
+ (192,'ZBSLS1203-YP5JFY','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JFY',0,'2022-08-02','Machine','Unit',3480),
+ (193,'ZBSLS1203-YP5JG2','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JG2',0,'2022-08-02','Machine','Unit',3480),
+ (194,'ZBSLS1203-YP5JG1','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JG1',0,'2022-08-02','Machine','Unit',3480),
+ (195,'ZBSLS1203-YP5JFU','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JFU',0,'2022-08-02','Machine','Unit',3480),
+ (196,'ZBSLS1203-YP5JG0','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JG0',0,'2022-08-02','Machine','Unit',3480);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (197,'ZBSLS1203-YP5JGA','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JGA',0,'2022-08-02','Machine','Unit',3480),
+ (198,'ZBSLS1203-YP5JEU','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JEU',0,'2022-08-02','Machine','Unit',3480),
+ (199,'ZBSLS1203-YP5JGR','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JGR',0,'2022-08-02','Machine','Unit',3480),
+ (200,'ZBSLS1203-YP5JGN','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','YP5JGN',0,'2024-03-20','Machine','Unit',3480),
+ (201,'SL6070','Sticker w/ SUNPRIDE LOGO YUPO BIG','Synthetic Yupo;2 Colors ( Red & Yellow);1 Across, 3 Inch core,SRC, 2000 Pcs/r','60mm x 70mm',0,'2024-04-19','Label','Roll',1398.53),
+ (202,'KL6070','Sticker with KASSEL LOGO YUPO BIG','Synthetic Yupo;2 Colors ( Red & Black);1 Across,3 Inch core,SRC, 2000pcs/r','60mm x 70mm',0,'2022-07-27','Label','Roll',1398.53),
+ (203,'PL45','Plain Label','Satin Standard,570 pcs per Roll, SRC; 1 Across, 1 inch Core, w/perf\r\n','4 inch  x 5 inch',0,'2024-09-11','Label','Roll',637);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (204,'PL8248SATIN','Plain Label','Satin Standard; 1 Across, 1\" core, 1400 Pcs per Roll, SC, w/Perf','82mm x 48mm ',0,'2025-01-22','Label','Roll',490),
+ (205,'PMS125175','Plain Satin with I-Mark and Security cut','3 Across; 1\"Core; No Gapping,Square Corner; 2000 pcs per roll','1.25mm x 1.75mm',0,'2022-08-17','Label','Roll',403),
+ (206,'PC42T-FD0','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi','22182BD0FD0',0,'2022-08-17','Machine','Unit',34000),
+ (207,'PC42T-1C7','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi','22181B31C7',0,'2022-08-17','Machine','Unit',34000),
+ (208,'PC42T-F2F','Honeywell Desktop Printer(Service Unit)','Honeywell Desktop Printer PC42T 203dpi(Service Unit)','22182B0F2F',1,'2022-08-17','Machine','Unit',34000),
+ (209,'PC42T-1DE','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi','22181B31DE',1,'2022-08-17','Machine','Unit',34000),
+ (210,'PL6560','Plain Label','Synthetic Yupo ,1 across 3 Inch Core, Square Corner; 2400 pcs per roll\r\n','65mm x 60mm',0,'2023-07-04','Label','Roll',1610);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (211,'TTR110300R','Thermal Transfer Ribbon','Premium Resin, Face Out, 1 Inch Core','110mm x 300m',0,'2022-11-15','Ribbon','Roll',1),
+ (212,'ZD230-2800','Zebra Desktop Printer','Zebra Desktop Thermal Transfer Printer ZD230 203dpi','D5J221402800',1,'2022-09-14','Printer','Unit',17500),
+ (213,'ZD230-2773','Zebra Desktop Printer','Zebra Desktop Thermal Transfer Printer ZD230 203dpi','D5J221402773',0,'2022-09-26','Printer','Unit',17500),
+ (214,'ZBDS2278-389','ZEBRA DS2278','Zebra Handheld Scanner; 1D/2D ; SR Black; Cordless; With Cradle\r\n','22200523410389',0,'2024-07-26','Scanner','Unit',23040),
+ (215,'ZBDS2278-488','ZEBRA DS2278','Zebra Handheld Scanner; 1D/2D ; SR Black; Cordless; With Cradle\r\n','22200523410488',0,'2024-03-15','Scanner','Unit',23040),
+ (216,'PWA4','A4 Sticker Plain White','Satin Standard,100pcs per bundle ','210mm x 297mm',1200,'2024-10-09','Label','Piece',2.5),
+ (217,'PTTAN','Packaging Tape','TAN Tape','3 inch X100m X45 ',9,'2022-09-16','Tape','Roll',1),
+ (218,'PTTAN3X1000','Packaging Tape','TAN Tape','3 inch X1000mX45',15,'2022-09-20','Tape','Roll',1);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (219,'PLS3716','Plain Label','Satin Standard,1000 pcs/roll 2 Across; Square Corner ; 1\" Core,No Gapping','37mm x 16mm',40,'2022-12-21','Label','Roll',350),
+ (220,'PTHPTX2','Postek TX2 Printer Head','Postek TX2 Printer Head','1F307520Q',1,'2022-09-27','Parts','Piece',30000),
+ (221,'PRPTX2','Postek TX2 Platen Roller','Postek TX2 Platen Roller','02.0101.401',2,'2024-05-17','Parts','Piece',3000),
+ (222,'NL280S','Nordson NE-280S(LED) EM Lock','Nordson NE-280S(LED) EM Lock, Positioning\r\nHolding Force','280kg (600Lbs)',2,'2022-09-27','Machine','Piece',3000),
+ (223,'PC42T-94D','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi (SERVICE UNIT)','19100B594D',0,'2023-04-20','Printer','Piece',1),
+ (224,'ZD230-2703','Zebra Desktop Printer','Zebra Desktop Thermal Transfer Printer ZD230 203dpi\r\n','D5J221402703',1,'2022-10-12','Printer','Unit',17500),
+ (225,'ZD230-2817','Zebra Desktop Printer','Zebra Desktop Thermal Transfer Printer ZD230 203dpi\r\n','D5J221402817',1,'2022-10-12','Printer','Unit',17500),
+ (226,'ZBSLS1203-YP5JHJ','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JHJ',0,'2022-11-07','Machine','Unit',5000);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (227,'ZBSLS1203-YP5JFJ','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JFJ',0,'2024-03-20','Machine','Unit',5000),
+ (228,'ZBSLS1203-YP5JHD','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JHD',0,'2024-03-20','Machine','Unit',5000),
+ (229,'ZBSLS1203-YP5J83','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5J83',0,'2022-11-07','Machine','Unit',5000),
+ (230,'ZBSLS1203-YP5JDW','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JDW',0,'2022-11-07','Machine','Unit',5000),
+ (231,'ZBSLS1203-YP5JHK','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JHK',0,'2022-11-07','Machine','Unit',5000),
+ (232,'ZBSLS1203-YP5JH4','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JH4',0,'2024-03-20','Machine','Unit',5000),
+ (233,'ZBSLS1203-YP5KF9','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5KF9',0,'2022-11-07','Machine','Unit',5000);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (234,'ZBSLS1203-YP5JUM','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JUM',0,'2024-03-20','Machine','Unit',5000),
+ (235,'ZBSLS1203-YP5JHN','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JHN',0,'2022-11-07','Machine','Unit',0),
+ (236,'ZBSLS1203-YP5JFH','LS1203','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand','YP5JFH',0,'2024-03-20','Machine','Unit',5000),
+ (237,'BSCABLE','Barcode Scanner USB Cable ','2M Symbol Barcode Scanner USB Cable','2M',10,'2023-03-28','Parts','Piece',700),
+ (238,'STU2','1 Set System Unit','Intel(R) Pentium(R) CPU G3258 @ 3.20GHz,4 gb Ram, Neutron Case,  AOC SN :AQPK61A010025','00331-10000-00001-AA',0,'2022-11-10','Machine','Unit',0),
+ (239,'2620BT-2861','Superlead Barcode Scanner ','Superlead Barcode Scanner Wireless 1D/2D','S22103102861',0,'2022-11-17','Scanner','Unit',6292),
+ (240,'2620BT-2864','Superlead Barcode Scanner 2620BT','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102864',0,'2022-11-17','Scanner','Unit',6292);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (241,'2620BT-2863','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102863',0,'2022-11-17','Scanner','Unit',6292),
+ (242,'2620BT-2867','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102867',0,'2022-11-17','Scanner','Unit',6292),
+ (243,'2620BT-2869','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102869',1,'2022-11-11','Scanner','Unit',6292),
+ (244,'2620BT-2870','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102870',1,'2022-11-11','Scanner','Unit',6292),
+ (245,'2620BT-2862','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102862',0,'2022-11-17','Scanner','Unit',6292),
+ (246,'2620BT-2866','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102866',0,'2022-11-17','Scanner','Unit',6292),
+ (247,'2620BT-2865','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102865',0,'2022-11-17','Scanner','Unit',6292);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (248,'2620BT-2868','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D/2D Model 2620BT\r\n','S22103102868',0,'2022-11-17','Scanner','Unit',6292),
+ (251,'PRHWPM42','Honeywell PM42 Platen Roller','Honeywell PM42 Platen Roller PN:50133094-001','PN:50133094-001',2,'2022-11-16','Printer Parts','Piece',4000),
+ (252,'PTHHWPM-0767','Honeywell PM42 Printer Head','Honeywell PM42 Printer Head 203dpi PN:50126706-001\r\n','KYOJPN122200767',0,'2024-11-14','Printer Parts','Piece',18000),
+ (253,'PTHHWPM-0069','Honeywell PM42 Printer Head','Honeywell PM42 Printer Head 203dpi PN:50126706-001\r\n','KYOJPN120100069',0,'2024-11-14','Printer Parts','Piece',18000),
+ (254,'TTRPR85300','Thermal Transfer Ribbon','Premium Resin, Face Out, 1 Inch Core','85mm x 300m',2,'2023-01-17','Ribbon','Roll',1),
+ (255,'TTR95300','Thermal Transfer Ribbon','Resin, Face Out, 1 Inch Core','95mm x 300M',5,'2023-03-24','Ribbon','Roll',0),
+ (256,'ZBSLS2208-MG','LS2208','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','SZ4GMMG',0,'2024-03-20','Scanner','Unit',8000);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (257,'ZBSLS2208-MF','LS2208','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','SZ4GMMF',0,'2024-03-20','Scanner','Unit',8000),
+ (258,'PL46','Plain Label','Satin Standard, 500 pcs per Roll,SC, 1 Across, 1.5 Inch Core,Plain\r\n','4 inch x 6 inch',0,'2023-05-29','Label','Roll',727.95),
+ (259,'1620BT-1710','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D Model 1620BT\r\n','S23022201710',0,'2023-03-11','Scanner','Unit',4752.45),
+ (260,'1620BT-1707','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D Model 1620BT\r\n','S23022201707',0,'2023-03-11','Scanner','Unit',4752.45),
+ (261,'1620BT-1709','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D Model 1620BT\r\n','S23022201709',0,'2023-03-11','Scanner','Unit',4752.45),
+ (262,'1620BT-1706','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D Model 1620BT\r\n','S23022201706',0,'2023-03-11','Scanner','Unit',4752.45),
+ (263,'1620BT-1708','Superlead Barcode Scanner','Superlead Barcode Scanner Wireless 1D Model 1620BT\r\n','S23022201708',0,'2023-03-11','Scanner','Unit',4752.45);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (264,'7708SL-1711','Superlead Barcode Scanner','Superlead Barcode Scanner Desktop 1D/2D Model 7708SL\r\n','S23022201711',1,'2023-03-08','Scanner','Unit',15624.53),
+ (265,'7708SL-1712','Superlead Barcode Scanner','Superlead Barcode Scanner Desktop 1D/2D Model 7708SL\r\n','S23022201712',0,'2023-03-11','Scanner','Unit',15624.53),
+ (269,'PTHZT220-07599','Printer Head ZT200 Series','ZEBRA Printer Head for ZT200 series; 203dpi\r\n','BE2203-07599AB',1,'2023-04-05','Printer Parts','Piece',33458.84),
+ (270,'PTHZT220-07586','Printer Head ZT200 Series','ZEBRA Printer Head for ZT200 series; 203dpi\r\n','BE2203-07586AB',0,'2024-02-02','Printer Parts','Piece',33458.84),
+ (271,'PMSC125125','Plain Label Satin','With I-Mark&Security cut;3 Across; 1\"Core; No Gapping,SC,2000pcs per roll\r\n','1.25 inch x 1.25inch',0,'2023-06-07','Label','Roll',235),
+ (272,'TTR90300','Thermal Transfer ribbon','Wax resin ,Face out ,1 Inch Core,\r\n','90mm x 300m',0,'2025-03-04','Ribbon','Roll',423.36),
+ (273,'PC42T-D16','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi (SERVICE UNIT)','18314B2D16',0,'2023-07-17','Printer','Piece',0);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (274,'PC42T-96C','Honeywell Desktop Printer','Honeywell Desktop Printer PC42T 203dpi (SERVICE UNIT)','19100B596C',0,'2023-07-17','Printer','Piece',0),
+ (275,'PCSET','PCSET- SERVICE UNIT','PC SETK Keyboard,mouse,System Unit (white case), AVR, Nvision Monitor','PCSET',0,'2023-09-13','Computer','Computer',0),
+ (276,'POSTEKTX20002','POSTEK TX2 SERVICE UNIT','POSTEK TX2 203 dpi','t0315L00002',0,'2023-09-13','Machine','Unit',0),
+ (277,'PHZT410 411','Printhead ZT410 411 300dpi','ZEBRA ZT410 411 PRINTHEAD 300 dpi \r\nPart No.P1058930-010','P1084221-004',0,'2023-09-28','Machine Parts','Piece',40629.99),
+ (278,'BROTHER TZE-551 24MM','Brother TZe-551','Brother Tape Cassette TZe-551; Laminated 24mm Black on Blue Tape;','24mm x 8m',0,'2023-11-07','Tape Cassette','Piece',1606.5),
+ (279,'BROTHER TZE-451 24MM','Brother TZe-451','Brother Tape Cassette TZe-451; Laminated 24mm Black on Red Tape;\r\n','24mm x 8m',0,'2023-11-07','Tape Cassette','Piece',1606.5),
+ (280,'BROTHER TZE-751 24MM','Brother TZe-751','Brother Tape Cassette TZe-751; Laminated 24mm Black on GreenTape;\r\n','24mm x 8m',0,'2023-11-07','Tape Cassette','Piece',1606.5);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (281,'BROTHER TZE-651 24MM','Brother TZe-651','Brother Tape Cassette TZe-651; Laminated 24mm Black on Yellow Tape;\r\n','24mm x 8m',0,'2023-11-07','Tape Cassette','Piece',1606.5),
+ (282,'BROTHER TZE-251 24MM','Brother TZe-251','Brother Tape Cassette TZe-251; Laminated 24mm Black on White Tape;\r\n','24mm x 8m',0,'2023-11-07','Tape Cassette','Piece',1606.5),
+ (283,'BROTHER PT-P900W - 88330','Brother PT-P900W','Brother PT-P900W Professional Wireless Network Label Printer','E76564C3G388330',0,'2023-11-07','Printer','Unit',39510),
+ (284,'KSTSSD240','Kingston SSD 240 GB','Solid State Drive','SA400S37240GCN',0,'2024-01-05','Machine','Piece',2500),
+ (285,'PTHPC42T-59298','Printer Head PC42T','Honeywell Printer Head 203 dpi\r\n','AR0823-59298',1,'2024-02-01','Printer Parts','Piece',22000),
+ (286,'PTHPC42T-59300','Printer Head PC42T','Honeywell Printer Head 203 dpi\r\n','AR0823-59300',1,'2024-02-01','Printer Parts','Piece',22000),
+ (287,'PTHPC42T-59299','Printer Head PC42T','Honeywell Printer Head 203 dpi\r\n','AR0823-59299',1,'2024-02-01','Printer Parts','Piece',22000);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (288,'PTHPC42T-59302','Printer Head PC42T','Honeywell Printer Head 203 dpi\r\n','AR0823-59302',1,'2024-02-01','Printer Parts','Piece',22000),
+ (289,'PTHPC42T-59301','Printer Head PC42T','Honeywell Printer Head 203 dpi\r\n','AR0823-59301',1,'2024-02-01','Printer Parts','Piece',22000),
+ (290,'CARTON SEALER MACHINE 52','CARTON SEALER MACHINE','MODEL: XT553RL SIDE BELT \r\n1770 MM X 940 X 1030 MM CARTON SIZE MM','220518152',0,'2024-04-03','Machine','Unit',242250),
+ (292,'TAPE HEAD ASSY XTB3','TAPE HEAD ASSY','CARTON SEALER MACHINE  XT553RL  PARTS\r\nTAPE HEAD ASSY\r\n(TOP AND BOTTOM)','TH436B XTB3',0,'2024-04-03','Machine Parts','Set',72250),
+ (293,'TAPE MANDREL SHAFT TH403','TAPE MANDREL SHAFT','CARTON SEALER MACHINE  XT553RL  PARTS\r\nTAPE MANDREL SHAFT','TH403B',0,'2024-04-03','Machine Parts','Set',3612.5),
+ (294,'PTHPTX2-798Q','Postek TX2 Printer Head','Postek TX2 Printer Head\r\n','2K257798Q',1,'2024-05-17','Parts','Piece',30000),
+ (295,'PC42T PARTS','Power Adapter & Cord','Honeywell PC42T Parts- Power Adapter and Cord','AC100-240V 50/60Hz ',2,'2024-06-20','Parts','Set',5860);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (296,'PLB145230','Plain Label Bookpaper','BARCODE LABEL PLAIN BOOKPAPER\r\nW/ INSIDE CUT @ 25MM\r\n800pcs/roll;3\"core','145mm (W) x 230mm',0,'2024-06-24','Label','Roll',1862),
+ (297,'A4HAZWASTE','HAZARDOUS WASTE','HAZARDOUS WASTE\r\nSOLID YELLOW + BLACK PRINT\r\nSatin Hotmelt','210mm  x  297mm',0,'2024-06-24','Label','Sheet',12),
+ (298,'PLY21','Plain Label','SYNTHETIC YUPO\r\nSRC; 1 Across\r\n1 Inch Core; With Perf; 5400pcs per roll','2 Inch x 1 Inch',0,'2024-07-17','Label','Roll',2045.57),
+ (299,'ZBSLS2208-DAR','LS2208','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','Z50 DAR',0,'2024-08-30','Machine','Unit',7200),
+ (300,'ZBSLS2208-DAC','LS2208','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','Z50 DAC',0,'2024-08-30','Machine','Unit',7200),
+ (301,'ZBSLS2208-DAH','LS2208','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','Z50 DAH',1,'2024-08-28','Scanner','unit',7200),
+ (302,'ZBSLS2208-DAV','LS2208','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','Z50 DAV',0,'2024-08-30','Scanner','unit',7200);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (303,'ZBSLS2208-DBA','LS2208','Zebra Handheld Digital Scanner; 1D; SR Black; Wired/Corded; With Stand\r\n','Z50 DBA',1,'2024-08-28','Scanner','unit',7200),
+ (304,'SLB120210','Plain Bookpaper HOTMELT ','BARCODE LABEL PLAIN\r\nMaterial: Bookpaper- HOTMELT','120mm x 210mm',0,'2024-09-13','Label','Sheet',3.33),
+ (305,'PTP8070','POS THERMAL PAPER','POS THERMAL PAPER\r\nSize: 80mm (width) x 70mm (diameter)','80mm x 70mm',0,'2024-09-20','POS THERMAL PAPER','Roll',55),
+ (306,'PC42E-5FF','Honeywell Desktop Printer','Honeywell Desktop Printer PC42E 203dpi\r\n','24232W05FF',1,'2024-10-23','Printer','Unit',36000),
+ (307,'PC42E-25B','Honeywell Desktop Printer','Honeywell Desktop Printer PC42E 203dpi\r\n','24232W025B',1,'2024-10-23','Printer','Unit',36000),
+ (308,'PC42E-2E4','Honeywell Desktop Printer','Honeywell Desktop Printer PC42E 203dpi\r\n','24232W02E4',1,'2024-10-23','Printer','Unit',36000),
+ (309,'SLB145210','Plain Bookpaper HOTMELT','BARCODE LABEL PLAIN- W/ INSIDE CUT @ 25MM Material: Bookpaper','145mm x 210mm',0,'2024-10-29','Label','Sheet',3.51),
+ (310,'POSTEK BELT','Postek Timing Belt','Postek TX2 Rubber Open Timing Belt','6mm x 2M',1,'2024-11-21','Belt','Roll',0);
+INSERT INTO `items` (`Id`,`code`,`name`,`descri`,`size`,`quan`,`dat`,`typ`,`unit`,`price`) VALUES 
+ (311,'POSTEK BUTTON SWITCH','Postek Button Switch','Postek Button Switch ','6mm ',38,'2024-11-21','Button Switch','Piece',0),
+ (312,'COMPUTER SET AMD RYZEN 3','Computer Set AMD RYZEN 3 3200G','Computer Set AMD RYZEN 3 3200G ;Specs Indicated in the DR',' RYZEN 3 3200G',0,'2024-11-28','Computer','Set',0);
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
+
+
+--
+-- Definition of table `sales`
+--
+
+DROP TABLE IF EXISTS `sales`;
+CREATE TABLE `sales` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `si` int(10) unsigned NOT NULL,
+  `dr` int(10) unsigned NOT NULL,
+  `compa` varchar(45) NOT NULL,
+  `tin` varchar(45) NOT NULL,
+  `amo` double NOT NULL,
+  `da` date NOT NULL,
+  `rem` varchar(100) NOT NULL,
+  `adr` varchar(120) DEFAULT NULL,
+  `po` varchar(60) NOT NULL,
+  `ter` int(10) unsigned NOT NULL,
+  `tax` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=454 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sales`
+--
+
+/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
+
+
+--
+-- Definition of table `stocks`
+--
+
+DROP TABLE IF EXISTS `stocks`;
+CREATE TABLE `stocks` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Itname` varchar(75) NOT NULL,
+  `daicom` double NOT NULL,
+  `quan` double NOT NULL,
+  `date` date NOT NULL,
+  `po` double NOT NULL,
+  `del` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stocks`
+--
+
+/*!40000 ALTER TABLE `stocks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `stocks` ENABLE KEYS */;
+
+
+--
+-- Definition of table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `pass` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL,
+  `type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=202400016 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`id`,`name`,`pass`,`username`,`type`) VALUES 
+ (1,'Ricky Lesigues Nimpa Jr','scancode072014','RLN','Admin'),
+ (20210004,'Alvin Lavin Horario','mashamasha','masha','User'),
+ (20210005,'Stephen Ryan Pacifico','admin101','bengz','Admin'),
+ (20210006,'Blendo Bordaje Reyes','SCANCODE@','admin2','Admin'),
+ (20210007,'JENIE OMALIN ELIGIO','567988','j.eligio','Admin'),
+ (20210008,'Jennylyn Sta Ana Pastias','scte2022','jenpastias','Admin'),
+ (20230013,'John Paul Adoptante Galzote','Scte013','John013','User'),
+ (20240016,'Johanne De La Rosa','jdlrosa6','johannedelarosa6','Admin'),
+ (202400015,'Jimuelle G Pescador','123456','jim1199','Admin');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
